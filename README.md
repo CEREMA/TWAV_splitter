@@ -19,11 +19,11 @@ Ouvrir une invite de commandes Windows
 	cd votredossier
 	git clone https://github.com/CEREMA/TWAV_splitter.git
 
-Cela va créer un dossier TWAV_splitter avec le script. Aller dedans :
+Cela va créer un dossier TWAV_splitter. Aller dedans :
 
 	cd TWAV_splitter
 
-Lancer le script :
+Lancer le script en choisissant un dossier source (comprenant les T.WAV) et un dossier de sortie (qui comprendra les .WAV):
 
 	python TWAV_splitter.py -i <dossier_source> -o <dossier_sortie>
 
@@ -35,7 +35,7 @@ Pour accélérer les traitements, on peut les exécuter en parallèle avec `-n`
 
 Le script va parcourir le dossier source et créer les fichiers découpés dans le dossier de sortie selon la même arborescence.
 
-Les fichiers WAV générés dans le dossier de sortie peuvent être versés dans [Vigie-Chiro](https://www.vigienature.fr/fr/chauves-souris)
+Les fichiers WAV générés dans le dossier de sortie peuvent alors être versés dans [Vigie-Chiro](https://www.vigienature.fr/fr/chauves-souris)
 
 ## Tutoriel
 [Si vous avez des difficultés, vous pouvez vous référer à ce tutoriel pas à pas avec des copies d'écran](Tuto_decoup_TWAV.pdf)
