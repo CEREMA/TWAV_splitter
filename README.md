@@ -1,7 +1,7 @@
 # TWAV_Splitter
 
 <p align=center><img src=https://www.vigienature.fr/sites/vigienature/files/styles/1600x576/public/thumbnails/image/bandeau_0.jpg width=100%></p>
-<p align=right>Crédits image : https://www.vigienature.fr/fr/chauves-souris</p>
+<p align=center>Crédits image : https://www.vigienature.fr/fr/chauves-souris</p>
 
 Ce script permet de transformer des fichiers audios T.WAV en .WAV pour une intégration dans la plateforme [Vigie-Chiro](https://www.vigienature.fr/fr/chauves-souris)
 
