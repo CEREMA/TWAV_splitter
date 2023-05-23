@@ -19,7 +19,9 @@ Ouvrir une invite de commandes Windows
 	cd votredossier
 	git clone https://github.com/CEREMA/TWAV_splitter.git
 
-Cela va créer un dossier TWAV_splitter. Aller dedans :
+Cela va créer un dossier TWAV_splitter. 
+
+Aller dedans :
 
 	cd TWAV_splitter
 
