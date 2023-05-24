@@ -97,7 +97,7 @@ def main(argv):
 """)
 
 def splitting(json_file):
-    subprocess.run(f"node AudioMoth-Utils-master\Expand_V2.js {json_file}")
+    subprocess.run(f"node AudioMoth-Utils-master\_Expand.js {json_file}")
     os.remove(json_file)
 
 if __name__ == '__main__':
