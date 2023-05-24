@@ -1,9 +1,11 @@
 # TWAV_Splitter
 
 <p align=center><img src=https://www.vigienature.fr/sites/vigienature/files/styles/1600x576/public/thumbnails/image/bandeau_0.jpg width=100%></p>
-<p align=right>Crédits image : https://www.vigienature.fr/fr/chauves-souris</p>
+<p align=center>Crédits image : https://www.vigienature.fr/fr/chauves-souris</p>
 
-Ce script permet de transformer des fichiers audios T.WAV en .WAV pour une intégration dans la plateforme [Vigie-Chiro](https://www.vigienature.fr/fr/chauves-souris)
+Ce script permet de transformer des fichiers audios T.WAV en .WAV pour une intégration dans la plateforme [Vigie-Chiro](https://www.vigienature.fr/fr/chauves-souris).
+
+Il s'appuie sur la librairie  [Audiomoth-utils](https://github.com/OpenAcousticDevices/AudioMoth-Utils)
 
 [A propos du traitement](#a-propos)
 
@@ -17,11 +19,13 @@ Ouvrir une invite de commandes Windows
 	cd votredossier
 	git clone https://github.com/CEREMA/TWAV_splitter.git
 
-Cela va créer un dossier TWAV_splitter avec le script. Aller dedans :
+Cela va créer un dossier TWAV_splitter. 
+
+Aller dedans :
 
 	cd TWAV_splitter
 
-Lancer le script :
+Lancer le script en choisissant un dossier source (comprenant les T.WAV) et un dossier de sortie (qui comprendra les .WAV):
 
 	python TWAV_splitter.py -i <dossier_source> -o <dossier_sortie>
 
@@ -33,15 +37,13 @@ Pour accélérer les traitements, on peut les exécuter en parallèle avec `-n`
 
 Le script va parcourir le dossier source et créer les fichiers découpés dans le dossier de sortie selon la même arborescence.
 
-Les fichiers WAV générés dans le dossier de sortie peuvent être versés dans [Vigie-Chiro](https://www.vigienature.fr/fr/chauves-souris)
+Les fichiers WAV générés dans le dossier de sortie peuvent alors être versés dans [Vigie-Chiro](https://www.vigienature.fr/fr/chauves-souris)
 
 ## Tutoriel
 [Si vous avez des difficultés, vous pouvez vous référer à ce tutoriel pas à pas avec des copies d'écran](Tuto_decoup_TWAV.pdf)
 
 ## License
-L'outil TWAV_splitter utilise la bibliothèque [Audiomoth-utils](https://github.com/OpenAcousticDevices/AudioMoth-Utils) qui est sous Licence MIT.
-
-La licence est la licence MIT
+L'outil TWAV_splitter utilise la bibliothèque [Audiomoth-utils](https://github.com/OpenAcousticDevices/AudioMoth-Utils) et est sous la même license que celui-ci, la license MIT.
 
 ## A propos
 Le format T.WAV correspond à des fichiers audio concaténés par les enregistreurs acoustiques AudioMoth®.

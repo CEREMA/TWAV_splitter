@@ -40,13 +40,13 @@ def main(argv):
         opts, args = getopt.getopt(argv, "hi:o:n:", ["idir=", "odir=", "nbthread="])
     except getopt.GetoptError:
         print(f"""Utilisation:
-                vigie.py -i <inputdirectory> -o <outputdirectory> [-n <nombre de processus simultanés>]
+                TWAV_Splitter.py -i <inputdirectory> -o <outputdirectory> [-n <nombre de processus simultanés>]
         """)
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
             print(f"""Utilisation:
-                    vigie.py -i <inputdirectory> -o <outputdirectory> [-n <nombre de processus simultanés>]
+                    TWAV_Splitter.py -i <inputdirectory> -o <outputdirectory> [-n <nombre de processus simultanés>]
             """)
             sys.exit()
         elif opt in ("-i", "--idir"):
