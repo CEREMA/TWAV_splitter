@@ -5,7 +5,7 @@
 
 Ce script permet de transformer des fichiers audios T.WAV en .WAV pour une intégration dans la plateforme [Vigie-Chiro](https://www.vigienature.fr/fr/chauves-souris).
 
-Il s'appuie sur la librairie  [Audiomoth-utils](https://github.com/OpenAcousticDevices/AudioMoth-Utils)
+Il s'appuie sur la librairie opensource [Audiomoth-utils](https://github.com/OpenAcousticDevices/AudioMoth-Utils)
 
 [A propos du traitement](#a-propos)
 
@@ -42,6 +42,8 @@ Les fichiers WAV générés dans le dossier de sortie peuvent alors être versé
 ## Tutoriel
 [Si vous avez des difficultés, vous pouvez vous référer à ce tutoriel pas à pas avec des copies d'écran](Tuto_decoup_TWAV.pdf)
 
+Si vous ne parvenez toujours pas résoudre vos soucis, vous pouvez déposer un ticket dans le volet [Issues](https://github.com/CEREMA/TWAV_splitter/issues) du repo.
+
 ## License
 L'outil TWAV_splitter utilise la bibliothèque [Audiomoth-utils](https://github.com/OpenAcousticDevices/AudioMoth-Utils) et est sous la même license que celui-ci, la license MIT.
 
@@ -59,3 +61,7 @@ Le fichier T.WAV doit être dé-concaténé afin de séparer les évènements et
 De plus, pour l'analyse Vigie-Chiro, les évènement ne doivent pas durer plus de 5 secondes ; le fichier T.WAV doit donc être découpé en plusieurs fichiers de 5 secondes ou moins.
 
 On peut alors supprimer le 'T' de ces fichiers dé-concaténés et découpés afin de les convertir en fichiers .WAV classiques (Waveform Audio File Format).
+
+Le script ajoute une fonction [`expander_tree`](https://github.com/CEREMA/TWAV_splitter/blob/main/AudioMoth-Utils-master/_Expand.js#L5) dans la librairie [Audiomoth-utils](https://github.com/OpenAcousticDevices/AudioMoth-Utils)
+
+
