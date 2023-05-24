@@ -93,7 +93,7 @@ def main(argv):
     else:
         print("Paramètre(s) manquant(s)")
         print(f"""Utilisation:
-        vigie.py -i <inputdirectory> -o <outputdirectory> [-n <nombre de processus simultanés>]
+        TWAV_Splitter.py -i <inputdirectory> -o <outputdirectory> [-n <nombre de processus simultanés>]
 """)
 
 def splitting(json_file):
