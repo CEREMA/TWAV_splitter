@@ -72,6 +72,6 @@ De plus, pour l'analyse Vigie-Chiro, les évènement ne doivent pas durer plus d
 
 On peut alors supprimer le 'T' de ces fichiers dé-concaténés et découpés afin de les convertir en fichiers .WAV classiques (Waveform Audio File Format).
 
-Le script ajoute une fonction [`expander_tree`](https://github.com/CEREMA/TWAV_splitter/blob/main/AudioMoth-Utils-master/_Expand.js#L5) dans la librairie [Audiomoth-utils](https://github.com/OpenAcousticDevices/AudioMoth-Utils)
+Le script ajoute une fonction [`expander_tree`](https://github.com/CEREMA/TWAV_splitter/blob/main/AudioMoth-Utils-master/Expand_V2.js#L5) dans la librairie [Audiomoth-utils](https://github.com/OpenAcousticDevices/AudioMoth-Utils)
 
 
