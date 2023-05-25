@@ -44,6 +44,16 @@ Les fichiers WAV générés dans le dossier de sortie peuvent alors être versé
 
 Si vous ne parvenez toujours pas résoudre vos soucis, vous pouvez déposer un ticket dans le volet [Issues](https://github.com/CEREMA/TWAV_splitter/issues) du repo.
 
+## Script d'exemple
+Le dossier [`example`](example) contient des exemples d'enregistrements audio de chauve-souris.
+
+Le script [`example.bat`](example.bat) fournit un exemple de traitement du dossier `example`. Vous pouvez l'exécuter.
+
+Il traite les fichiers du dossier [`example/from`](example/from) pour les transformer dans le dossier `example/to` selon la même arborescence.
+
+	python TWAV_Splitter.py -i example\from -o example\to -n 6
+
+> Les fichiers de destination seront écrasés s'ils existent déjà
 ## License
 L'outil TWAV_splitter utilise la bibliothèque [Audiomoth-utils](https://github.com/OpenAcousticDevices/AudioMoth-Utils) et est sous la même license que celui-ci, la license MIT.
 
