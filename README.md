@@ -56,7 +56,7 @@ Il traite les fichiers du dossier [`example/from`](example/from) pour les transf
 
 > Les fichiers de destination seront écrasés s'ils existent déjà
 ## License
-L'outil TWAV_splitter utilise la bibliothèque [Audiomoth-utils](https://github.com/OpenAcousticDevices/AudioMoth-Utils) et est sous la même license que celui-ci, la license MIT.
+L'outil TWAV_splitter utilise la bibliothèque [Audiomoth-utils](https://github.com/OpenAcousticDevices/AudioMoth-Utils) et est sous la même license que celle-ci, la license MIT.
 
 ## A propos
 Le format T.WAV correspond à des fichiers audio concaténés par les enregistreurs acoustiques AudioMoth®.
@@ -73,6 +73,6 @@ De plus, pour l'analyse Vigie-Chiro, les évènement ne doivent pas durer plus d
 
 On peut alors supprimer le 'T' de ces fichiers dé-concaténés et découpés afin de les convertir en fichiers .WAV classiques (Waveform Audio File Format).
 
-Le script ajoute une fonction [`expander_tree`](https://github.com/CEREMA/TWAV_splitter/blob/main/AudioMoth-Utils-master/Expand_V2.js#L5) dans la librairie [Audiomoth-utils](https://github.com/OpenAcousticDevices/AudioMoth-Utils)
+Le script ajoute une fonction [`expander_tree`](https://github.com/CEREMA/TWAV_splitter/blob/main/AudioMoth-Utils-master/_Expand.js#L5) dans la librairie [Audiomoth-utils](https://github.com/OpenAcousticDevices/AudioMoth-Utils)
 
 
