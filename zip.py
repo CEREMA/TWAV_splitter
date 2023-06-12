@@ -8,6 +8,7 @@ import os
 CHEMIN = "chemin_complet"
 PREFIXE = "Renommage_prefixe"
 SUFFIXE = "Renommage_suffixe"
+DOSSIER = "nom_dossier"
 ANNEE = "Année"
 MAILLE = "Maille_Vigie_Chiro"
 NUMZ = "num_Z"
@@ -49,11 +50,11 @@ def zip(nom_fichier, nom_rep, nb_thread):
     for ligne in file.itertuples():
         fichier = f"{str(getattr(ligne, ANNEE))}-{str(getattr(ligne, MAILLE))}" \
                   f"-{str(getattr(ligne, NUMZ))}-{str(getattr(ligne, PASSAGE))}"
-        dossier = f"{nom_rep}\\{fichier}"
+        dossier = f"{nom_rep}\\{DOSSIER}"
         if not os.path.exists(dossier):
             os.makedirs(dossier)
         for rootdir, dirs, files in os.walk(ligne.chemin_complet):
-            q.put(f"c:\\Program Files\\7-Zip\\7z.exe a {dossier}\\{fichier}.zip {rootdir}\\*.wav -r -v700M")
+            q.put(f"c:\\Program Files\\7-Zip\\7z.exe a {dossier}\\{DOSSIER}.zip {rootdir}\\*.wav -r -v700M")
     nb_dossier = q.qsize()
     if nb_thread:
         for i in range(nb_thread):
