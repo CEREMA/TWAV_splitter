@@ -24,13 +24,14 @@ def main(argv):
         nb_thread = None
         if len(argv) == 3:
             nb_thread = int(argv[2])
-        zip(inputfile, zip_dir, nb_thread)
+        zipper(inputfile, zip_dir, nb_thread)
         return 0
     else:
         print(f"""Utilisation:
                 zip.py <inputfile> <zip_dir> [nb_thread]
         """)
         sys.exit(2)
+
 
 def worker(q):
     while True:
@@ -41,15 +42,14 @@ def worker(q):
         q.task_done()
 
 
-def zip(nom_fichier, nom_rep, nb_thread):
+def zipper(nom_fichier, nom_rep, nb_thread):
     file = pd.read_excel(nom_fichier, index_col=0)
-    compteur = 0
     if not os.path.exists(nom_rep):
         os.makedirs(nom_rep)
     q = queue.Queue()
     for ligne in file.itertuples():
-        fichier = f"{str(getattr(ligne, ANNEE))}-{str(getattr(ligne, MAILLE))}" \
-                  f"-{str(getattr(ligne, NUMZ))}-{str(getattr(ligne, PASSAGE))}"
+        # fichier = f"{str(getattr(ligne, ANNEE))}-{str(getattr(ligne, MAILLE))}" \
+        #           f"-{str(getattr(ligne, NUMZ))}-{str(getattr(ligne, PASSAGE))}"
         dossier = f"{nom_rep}\\{DOSSIER}"
         if not os.path.exists(dossier):
             os.makedirs(dossier)

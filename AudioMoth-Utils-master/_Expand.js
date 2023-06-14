@@ -4,24 +4,14 @@ const path = require('path');
 
 function expander_tree(json_file, prefix, expansionType,
      maximumFileDuration, generateSilentFiles, alignToSecondTransitions){
-    /* Open input file */
-
     try {
-
         fi = fs.openSync(json_file, 'r');
-
     } catch (e) {
-
         return {
             success: false,
             error: 'Could not open input file.'
         };
-
     }
-
-    /* Check the output path */
-
-
     fichier = fs.readFileSync(json_file);
     obj = JSON.parse(fichier);
     nb_fichiers = obj["nombre"];
@@ -29,12 +19,10 @@ function expander_tree(json_file, prefix, expansionType,
     i = 1;
     for (const [key, value] of Object.entries(fichiers)) {
         if (fs.lstatSync(value).isDirectory() === false) {
-
             return {
                 success: false,
                 error: 'Destination path is not a directory.'
             };
-
         }
         console.log(i + "/" + nb_fichiers + " : " + key)
         audiomothUtils.expand(key, value, prefix,
@@ -43,19 +31,28 @@ function expander_tree(json_file, prefix, expansionType,
     }
     fs.close(fi);        
 }
+
 let prefix = '';
 let expansionType = 'EVENT';
 let maximumFileDuration = 5;
 let generateSilentFiles = false;
 let alignToSecondTransitions = false;
 
-//process.argv.forEach(function (val, index, array) {
-console.time()
-expander_tree(process.argv[2], prefix, expansionType, maximumFileDuration, generateSilentFiles,alignToSecondTransitions)
-//});
-console.timeEnd()
-
-// expander_tree(json_file, prefix, expansionType, maximumFileDuration, generateSilentFiles,alignToSecondTransitions)
+console.time();
+fichier = process.argv[2];
+prefix = process.argv[3];
+expansionType = process.argv[4];
+maximumFileDuration = Number(process.argv[5]);
+generateSilentFiles_str = process.argv[6];
+if (generateSilentFiles_str === 'true'){
+    generateSilentFiles = true
+}
+alignToSecondTransitions_str = process.argv[7];
+if (alignToSecondTransitions_str === 'true'){
+    alignToSecondTransitions = true
+}
+expander_tree(fichier, prefix, expansionType, maximumFileDuration, generateSilentFiles, alignToSecondTransitions);
+console.timeEnd();
 
 
 
