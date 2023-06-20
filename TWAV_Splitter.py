@@ -45,7 +45,7 @@ def print_help():
         -e <expansionType> : 'EVENT' ou 'DURATION' (par défaut 'EVENT')
         -d <maximumFileDuration> : durée en seconde d'un fichier (par défaut 5)
         -s <generateSilentFiles> : True ou False (par défaut False)
-        -a <AlignToSecondsTransition> : True ou False (par défaut False)
+        -a <alignToSecondsTransition> : True ou False (par défaut False)
     """)
 
 
