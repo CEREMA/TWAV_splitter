@@ -39,15 +39,23 @@ let generateSilentFiles = false;
 let alignToSecondTransitions = false;
 
 console.time();
-fichier = process.argv[2];
-prefix = process.argv[3];
-expansionType = process.argv[4];
-maximumFileDuration = Number(process.argv[5]);
-generateSilentFiles_str = process.argv[6];
+i=2;
+fichier = process.argv[i];
+i++;
+if (process.argv.length=== 8){
+    prefix = process.argv[i];
+    i++;
+}
+expansionType = process.argv[i];
+i++;
+maximumFileDuration = Number(process.argv[i]);
+i++;
+generateSilentFiles_str = process.argv[i];
+i++;
 if (generateSilentFiles_str === 'true'){
     generateSilentFiles = true
 }
-alignToSecondTransitions_str = process.argv[7];
+alignToSecondTransitions_str = process.argv[i];
 if (alignToSecondTransitions_str === 'true'){
     alignToSecondTransitions = true
 }

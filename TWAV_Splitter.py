@@ -118,7 +118,7 @@ def main(argv):
         json_dict = {}
         json_dict["nombre"], json_dict["fichiers"] = liste_fichier_twav(inputdir, dossier_dest=outputdir)
         for t in range(nbthread):
-            list_arg.append((f"{rep}/fichiers{t}.json", prefixe, exp, duration, silent, align))
+            list_arg.append((f"{rep}\\fichiers{t}.json", prefixe, exp, duration, silent, align))
         thread_dict = {}
         for n in range(nbthread):
             thread_dict[f"{n}"] = {"nombre": 0,
@@ -147,7 +147,11 @@ def main(argv):
 
 def splitting(args):
     json_file, prefixe, exp, duration, silent, align = args
-    subprocess.run(f"node AudioMoth-Utils-master\\_Expand.js {json_file} {prefixe} {exp} {duration} {silent} {align}")
+
+    try:
+        subprocess.run(f"C:\\Program Files\\nodejs\\node.exe .\\AudioMoth-Utils-master\\_Expand.js {json_file} {prefixe} {exp} {duration} {silent} {align}")
+    except Exception as e:
+        print(e)
     os.remove(json_file)
 
 

@@ -4,7 +4,6 @@ import os
 
 CHEMIN = "chemin_complet"
 PREFIXE = "Renommage_prefixe"
-SUFFIXE = "Renommage_suffixe"
 fichier = "C:/vigie/renom_echantillon.xlsx"
 
 
@@ -16,7 +15,7 @@ def rename(nom):
         for rootdir, dirs, files in os.walk(getattr(ligne, CHEMIN)):
             for f in [f for f in files if f[-4:].lower() == ".wav" and f[-5:].lower() != 't.wav']:
                 src = rootdir+"\\"+str(f)
-                dest = rootdir+"\\"+f"{getattr(ligne, PREFIXE)}{str(f).split('.')[0]}{getattr(ligne, SUFFIXE)}.wav"
+                dest = rootdir+"\\"+f"{getattr(ligne, PREFIXE)}{str(f).split('.')[0]}.wav"
                 if src.find(ligne.Renommage_prefixe) == -1:
                     os.renames(src, dest)
                     compteur += 1
