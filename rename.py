@@ -4,11 +4,11 @@ import os
 
 CHEMIN = "chemin_complet"
 PREFIXE = "Renommage_prefixe"
-fichier = "C:/vigie/renom_echantillon.xlsx"
+fichier = "C:\echantillon-SCRIPT\TEST-renommage.xlsx"
 
 
 def rename(nom):
-    file = pd.read_excel(nom, index_col=0)
+    file = pd.read_excel(nom)
     compteur = 0
     for ligne in file.itertuples():
         print(getattr(ligne, CHEMIN))

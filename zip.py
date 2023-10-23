@@ -7,7 +7,6 @@ import os
 
 CHEMIN = "chemin_complet"
 PREFIXE = "Renommage_prefixe"
-SUFFIXE = "Renommage_suffixe"
 DOSSIER = "nom_dossier"
 ANNEE = "Année"
 MAILLE = "Maille_Vigie_Chiro"
@@ -43,18 +42,16 @@ def worker(q):
 
 
 def zipper(nom_fichier, nom_rep, nb_thread):
-    file = pd.read_excel(nom_fichier, index_col=0)
+    file = pd.read_excel(nom_fichier)
     if not os.path.exists(nom_rep):
         os.makedirs(nom_rep)
     q = queue.Queue()
     for ligne in file.itertuples():
-        # fichier = f"{str(getattr(ligne, ANNEE))}-{str(getattr(ligne, MAILLE))}" \
-        #           f"-{str(getattr(ligne, NUMZ))}-{str(getattr(ligne, PASSAGE))}"
-        dossier = f"{nom_rep}\\{DOSSIER}"
+        dossier = f"{nom_rep}\\{str(getattr(ligne, DOSSIER))}"
         if not os.path.exists(dossier):
             os.makedirs(dossier)
         for rootdir, dirs, files in os.walk(ligne.chemin_complet):
-            q.put(f"c:\\Program Files\\7-Zip\\7z.exe a {dossier}\\{DOSSIER}.zip {rootdir}\\*.wav -r -v700M")
+            q.put(f"c:\\Program Files\\7-Zip\\7z.exe a {dossier}\\{ligne.nom_dossier}.zip {rootdir}\\*.wav -r -v700M")
     nb_dossier = q.qsize()
     if nb_thread:
         for i in range(nb_thread):
@@ -63,7 +60,7 @@ def zipper(nom_fichier, nom_rep, nb_thread):
         threading.Thread(target=worker, args=(q,), daemon=True).start()
     q.join()
     nb_dossier_traite = nb_dossier - q.qsize()
-    print(f"{nb_dossier_traite} dossiers traités")
+    print(f"{nb_dossier_traite} dossiers traités sur {nb_dossier}")
 
 
 if __name__ == '__main__':
